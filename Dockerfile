@@ -4,6 +4,7 @@ MAINTAINER inotom
 
 ENV HOME=/home/app
 ENV PATH=$HOME/.npm-global/bin:$PATH
+ENV PATH=./node_modules/.bin:$PATH
 
 RUN \
   apk update \
@@ -21,4 +22,5 @@ RUN \
   mkdir $HOME/.npm-global \
   && npm config set prefix $HOME/.npm-global \
   && npm install -g npm@6.0.1 \
-  && npm cache verify
+  && npm cache verify \
+  && mkdir node_modules
