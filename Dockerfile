@@ -8,7 +8,7 @@ ENV PATH=./node_modules/.bin:$PATH
 
 RUN \
   apk update \
-  && apk add --no-cache sudo shadow \
+  && apk add --no-cache sudo shadow git \
   && useradd --user-group --create-home --shell /bin/false app \
   && echo "app ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
