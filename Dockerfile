@@ -1,4 +1,4 @@
-FROM node:8.11.2-alpine
+FROM node:8.11.4-alpine
 
 MAINTAINER inotom
 
@@ -16,9 +16,9 @@ RUN \
 # https://github.com/sgerrand/alpine-pkg-glibc
 RUN \
   apk --no-cache add ca-certificates wget \
-  && wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://raw.githubusercontent.com/sgerrand/alpine-pkg-glibc/master/sgerrand.rsa.pub \
-  && wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.27-r0/glibc-2.27-r0.apk \
-  && apk add glibc-2.27-r0.apk
+  && wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub \
+  && wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.28-r0/glibc-2.28-r0.apk \
+  && apk add glibc-2.28-r0.apk
 
 COPY package.json package-lock.json .npmrc $HOME/work/
 RUN \
@@ -29,6 +29,6 @@ WORKDIR $HOME/work
 RUN \
   mkdir $HOME/.npm-global \
   && npm config set prefix $HOME/.npm-global \
-  && npm install -g npm@6.0.1 \
+  && npm install -g npm@6.4.1 \
   && npm cache verify \
   && mkdir node_modules
