@@ -1,6 +1,9 @@
-FROM node:8.11.4-alpine
+FROM node:8.12.0-alpine
 
-MAINTAINER inotom
+LABEL maintainer "inotom"
+LABEL title="node-dev"
+LABEL version="5"
+LABEL description="Node.js development environment with Docker"
 
 ENV HOME=/home/app
 ENV PATH=$HOME/.npm-global/bin:$PATH
