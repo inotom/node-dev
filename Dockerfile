@@ -1,8 +1,8 @@
-FROM node:10.13.0-alpine
+FROM node:10.14.1-alpine
 
 LABEL maintainer "inotom"
 LABEL title="node-dev"
-LABEL version="6"
+LABEL version="7"
 LABEL description="Node.js development environment with Docker"
 
 ENV HOME=/home/app
