@@ -1,8 +1,8 @@
-FROM node:10.15.0-alpine
+FROM node:10.16.0-alpine
 
 LABEL maintainer "inotom"
 LABEL title="node-dev"
-LABEL version="8"
+LABEL version="9"
 LABEL description="Node.js development environment with Docker"
 
 ENV HOME=/home/app
@@ -32,6 +32,6 @@ WORKDIR $HOME/work
 RUN \
   mkdir $HOME/.npm-global \
   && npm config set prefix $HOME/.npm-global \
-  && npm install -g npm@6.5.0 \
+  && npm install -g npm@6.9.0 \
   && npm cache verify \
   && mkdir node_modules
