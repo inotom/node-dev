@@ -4,6 +4,8 @@ Node.js development environment with Docker
 
 ## versions
 
+inotom/node-dev:10 (node:12.14.0-alpine) (npm@6.13.4) Update node/npm version
+
 inotom/node-dev:9 (node:10.16.0-alpine) (npm@6.9.0) Update node/npm version
 
 inotom/node-dev:8 (node:10.15.0-alpine) (npm@6.5.0) Update node/npm version

@@ -1,8 +1,8 @@
-FROM node:10.16.0-alpine
+FROM node:12.14.0-alpine
 
 LABEL maintainer "inotom"
 LABEL title="node-dev"
-LABEL version="9"
+LABEL version="10"
 LABEL description="Node.js development environment with Docker"
 
 ENV HOME=/home/app
@@ -20,8 +20,8 @@ RUN \
 RUN \
   apk --no-cache add ca-certificates wget \
   && wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub \
-  && wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.28-r0/glibc-2.28-r0.apk \
-  && apk add glibc-2.28-r0.apk
+  && wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.30-r0/glibc-2.30-r0.apk \
+  && apk add glibc-2.30-r0.apk
 
 COPY package.json package-lock.json .npmrc $HOME/work/
 RUN \
@@ -32,6 +32,6 @@ WORKDIR $HOME/work
 RUN \
   mkdir $HOME/.npm-global \
   && npm config set prefix $HOME/.npm-global \
-  && npm install -g npm@6.9.0 \
+  && npm install -g npm@6.13.4 \
   && npm cache verify \
   && mkdir node_modules
